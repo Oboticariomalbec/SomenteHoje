@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Oferta Malbec Bleu</title>
   <style>
     body {
@@ -10,11 +10,7 @@
       background-color: #0c1b2a;
       color: #ffffff;
     }
-    input, button {
-      font-size: 16px;
-    }
     header {
-      width: 100%;
       display: flex;
       justify-content: center;
       background-color: #0c1b2a;
@@ -22,6 +18,14 @@
     header img {
       width: 100%;
       max-width: 1200px;
+    }
+    #mensagem-vendas {
+      text-align: center;
+      background-color: #162d44;
+      color: #00c3ff;
+      padding: 6px;
+      font-size: 14px;
+      font-weight: bold;
     }
     .banner, #banner-info, #banner-confiança {
       background-color: #162d44;
@@ -33,10 +37,13 @@
       margin: 30px auto;
       border-radius: 10px;
     }
-    .banner strong, #banner-info strong, #banner-confiança strong {
+    #banner-info {
+      font-weight: 400;
+    }
+    #banner-info strong, #banner-confiança strong {
       display: block;
       margin-bottom: 10px;
-      font-size: 22px;
+      font-size: 20px;
     }
     #video-container {
       text-align: center;
@@ -47,13 +54,14 @@
       aspect-ratio: 16 / 9;
       border: none;
       border-radius: 10px;
-      display: block;
-      margin: 0 auto;
     }
     .depoimentos {
       max-width: 800px;
+      height: 500px;
+      overflow-y: auto;
       margin: 30px auto;
       padding: 10px;
+      box-sizing: border-box;
     }
     .depoimento {
       background-color: #1c2f48;
@@ -63,7 +71,6 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      animation: fadeIn 1s ease-in-out;
     }
     .depoimento img {
       width: 50px;
@@ -87,7 +94,6 @@
       border: none;
       border-radius: 5px;
       font-size: 16px;
-      box-sizing: border-box;
     }
     .formulario button {
       background-color: #0b4d6d;
@@ -98,19 +104,6 @@
       font-size: 24px;
       margin-bottom: 10px;
     }
-    #estoque {
-      text-align: center;
-      font-size: 20px;
-      margin: 20px 0;
-      color: #ffd700;
-    }
-    #novo-depoimento {
-      max-width: 600px;
-      margin: 20px auto;
-      background: #1c2f48;
-      padding: 20px;
-      border-radius: 10px;
-    }
     #mensagemPix, #mensagemFinal {
       display: none;
       background-color: #0b4d6d;
@@ -119,17 +112,32 @@
       padding: 12px;
       margin-top: 10px;
       border-radius: 6px;
-      animation: fadeIn 0.5s ease-in-out;
     }
     #notificacao {
       text-align: center;
       color: #00c3ff;
       font-weight: bold;
       margin: 20px 0;
-      animation: fadeIn 1s ease-in-out;
     }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}    }
+    #estoque {
+      text-align: center;
+      font-size: 20px;
+      margin: 20px 0;
+      color: #ffd700;
+    }
+    #adicionar-depoimento {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #adicionar-depoimento button {
+      background-color: #0b4d6d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
     @media screen and (max-width: 768px) {
       .formulario, #banner-info, .banner, .depoimentos {
         padding: 15px;
@@ -143,25 +151,33 @@
   </style>
 </head>
 <body>
+  <div id="mensagem-vendas">Esse site fez 627 vendas hoje</div>
   <header>
-    <img src="file_0000000030386243b269f5f691727a14 (1).png" alt="Banner Malbec Bleu">
-  </header>  <div id="video-container">
+    <img src="file_0000000030386243b269f5f691727a14 (1).png" alt="Banner Malbec Bleu" />
+  </header>
+  <div id="video-container">
     <iframe src="https://www.youtube.com/embed/Rl218vrvi5Q?autoplay=1&mute=1&rel=0&modestbranding=1&showinfo=0&controls=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>  <div id="banner-info">
-    <strong>Por que o produto está nesse valor?</strong>
-    Conseguimos esse valor promocional graças a uma negociação direta com um distribuidor autorizado. O lote é limitado e por isso conseguimos vender com um preço abaixo do mercado. Além disso, todos os pedidos acompanham um brinde exclusivo: um relógio masculino.<br><br>Essa oferta é verdadeira! Não somos um site fraudulento. Essa semana já fizemos mais de 4 mil envios para todo o Brasil com total segurança e satisfação dos nossos clientes.
-  </div>  <div id="banner-confiança">
-    <strong>Eu entendo seu medo, eu sei como é difícil confiar em compras online hoje.</strong>
-    Sabemos o quanto é complicado encontrar lojas seguras na internet. Não apoiamos nenhum tipo de golpe e estamos aqui para mostrar seriedade. Temos depoimentos reais, entrega com código de rastreio, suporte humanizado e um compromisso com sua confiança. Confie: aqui, você compra com tranquilidade.
-  </div>  <div class="banner">
-    <img src="mbh40_11-90c4fede55df503da616079674499275-1024-1024.webp" alt="Oferta Garantida" style="width:100%; border-radius: 10px;">
-  </div>  <div id="notificacao">4.000 mil pessoas compraram nesse site essa semana</div>
-  <div id="estoque">Estoque disponível: <span id="contador">400</span> unidades</div>  <div class="depoimentos" id="depoimentos"></div>  <div id="novo-depoimento">
-    <h3>Adicionar Depoimento</h3>
-    <input type="text" id="nomeCliente" placeholder="Seu nome">
-    <input type="text" id="textoDepoimento" placeholder="Seu depoimento">
-    <button onclick="adicionarDepoimento()">Enviar Depoimento</button>
-  </div>  <div class="formulario">
+  </div>
+  <div id="banner-info">
+    <strong>Por que esse valor tão baixo?</strong>
+    Conseguimos esse valor promocional graças a uma negociação direta com um distribuidor autorizado. O lote é limitado e por isso conseguimos vender com um preço abaixo do mercado. Além disso, todos os pedidos acompanham um brinde exclusivo: um relógio masculino.
+
+Essa oferta é verdadeira! Não somos um site fraudulento. Essa semana já fizemos mais de 4 mil envios para todo o Brasil com total segurança e satisfação dos nossos clientes.
+  </div>
+  <div id="banner-confiança">
+    <strong>Tem receio de comprar online?</strong>
+Eu entendo seu medo, eu sei como é difícil confiar em compras online hoje.
+Sabemos o quanto é complicado encontrar lojas seguras na internet. Não apoiamos nenhum tipo de golpe e estamos aqui para mostrar seriedade. Temos depoimentos reais, entrega com código de rastreio, suporte humanizado e um compromisso com sua confiança. Confie: aqui, você compra com tranquilidade.
+  </div>
+  <div class="banner">
+    <img src="mbh40_11-90c4fede55df503da616079674499275-1024-1024.webp" alt="Oferta Garantida" style="width:100%; border-radius: 10px;" />
+  </div>
+  <div id="notificacao">4.000 mil pessoas compraram nesse site essa semana</div>
+  <div id="estoque">Estoque disponível: <span id="contador">400</span> unidades</div>
+  <div id="adicionar-depoimento">
+    <button onclick="alert('Depoimento enviado com sucesso!')">Adicionar Depoimento</button>
+  </div>
+  <div class="depoimentos" id="depoimentos"></div>  <div class="formulario">
     <h2>Finalize sua compra</h2>
     <input type="text" placeholder="Nome completo">
     <input type="text" placeholder="CPF">
@@ -174,87 +190,87 @@
     <div id="mensagemPix">Chave PIX copiada com sucesso!</div>
     <div id="mensagemFinal">Tudo certo com seu pedido, agora finalize o pagamento.</div>
   </div>  <script>
-    const nomesCompletos = [
-      "Lucas Ferreira","Matheus Lima","Pedro Souza","João Almeida","Gustavo Silva","André Martins","Felipe Rocha","Bruno Azevedo","Caio Duarte","Rafael Monteiro",
-      "Tiago Carvalho","Danilo Ramos","Eduardo Faria","Leonardo Pinto","Vitor Braga","Diego Ribeiro","Murilo Castro","Rodrigo Mendes","Renan Barros","Gabriel Cunha",
-      "Igor Pacheco","Douglas Teixeira","Samuel Nogueira","Vinícius Fernandes","Otávio Antunes","Henrique Maciel","Fabrício Lemos","Wesley Brito","Alex Moraes","Marcelo Cardoso",
-      "César Tavares","Júlio Correia","Luan Neves","Evandro Costa","Renato Xavier","Wallace Dias","Jonathan Amaral","Fernando Rezende","Leandro Fonseca","Alan Paiva",
-      "Daniel Rocha","Maurício Novaes","Paulo Esteves","Rogério Vilela","Adriano Barreira","Carlos Furtado","José Teles","Marcos Holanda","Elvis Gonçalves","Nathan Siqueira",
-      "Cristiano Sales","Elias Moraes","Luciano Vianna","Estevão Cunha","Márcio Vieira","Ítalo Bastos","Saulo Mendes","Davi Rocha","Giovani Martins","Robson Lira",
-      "Alisson Galvão","Edson Campos","Patrick Almeida","Éder Silveira","Heitor Sanches","Cauã Oliveira","Otto Barbosa","Noah Diniz","Emanuel Vilar","Yuri Guimarães"
-    ];
+    const nomes = ["Lucas Ferreira", "Matheus Lima", "Pedro Souza", "João Almeida", "Gustavo Silva", "André Martins", "Felipe Rocha", "Bruno Azevedo", "Caio Duarte", "Rafael Monteiro", "Tiago Carvalho", "Danilo Ramos", "Eduardo Faria", "Leonardo Pinto", "Vitor Braga", "Diego Ribeiro", "Murilo Castro", "Rodrigo Mendes", "Renan Barros", "Gabriel Cunha", "Igor Pacheco", "Douglas Teixeira", "Samuel Nogueira", "Vinícius Fernandes", "Otávio Antunes", "Henrique Maciel", "Fabrício Lemos", "Wesley Brito", "Alex Moraes", "Marcelo Cardoso", "César Tavares", "Júlio Correia", "Luan Neves", "Evandro Costa", "Renato Xavier", "Wallace Dias", "Jonathan Amaral", "Fernando Rezende", "Leandro Fonseca", "Alan Paiva", "Daniel Rocha", "Maurício Novaes", "Paulo Esteves", "Rogério Vilela", "Adriano Barreira", "Carlos Furtado", "José Teles", "Marcos Holanda", "Elvis Gonçalves", "Nathan Siqueira", "Cristiano Sales", "Elias Moraes", "Luciano Vianna", "Estevão Cunha", "Márcio Vieira", "Ítalo Bastos", "Saulo Mendes", "Davi Rocha", "Giovani Martins", "Robson Lira", "Alisson Galvão", "Edson Campos", "Patrick Almeida", "Éder Silveira", "Heitor Sanches", "Cauã Oliveira", "Otto Barbosa", "Noah Diniz", "Emanuel Vilar", "Yuri Guimarães"];
+
     const frases = [
-      "Perfume sensacional, minha esposa amou o cheiro.",
-      "Fiquei surpreso com a qualidade, super recomendo!",
-      "Chegou antes do prazo e o cheiro é top demais.",
-      "Comprei com medo, mas valeu cada centavo.",
-      "Fixa muito bem na pele e é muito masculino.",
-      "É o tipo de fragrância que chama atenção.",
-      "Sinto que combina perfeitamente comigo.",
-      "Já virou meu perfume oficial.",
-      "O brinde também é excelente, adorei o relógio.",
-      "Fui elogiado no trabalho, gostei muito.",
-      "Perfume com presença, marcante e sofisticado.",
-      "A embalagem chegou impecável.",
-      "A loja foi super atenciosa com o atendimento.",
-      "Sinceramente, fiquei impressionado.",
-      "Vou indicar pros amigos com certeza.",
-      "Uso no dia a dia e também à noite.",
-      "Não achei em nenhum outro lugar por esse preço.",
-      "Perfume original e de alta qualidade.",
-      "Produto chegou rápido e bem embalado.",
-      "Nota 10, super satisfeito.",
-      "Muito melhor do que eu esperava.",
-      "Combinou com meu estilo.",
-      "Meu novo favorito.",
-      "Só elogios pra esse produto.",
-      "Até minha mãe elogiou.",
-      "Cheiro de homem de verdade.",
-      "Brinde de qualidade, não é qualquer coisa.",
-      "Já quero comprar outro pra deixar guardado.",
-      "Entrega segura e rápida.",
-      "O atendimento me deu confiança.",
-      "Achei que era golpe, mas é 100% confiável.",
-      "Primeira vez comprando, gostei demais.",
-      "Fácil de comprar e chegou certinho.",
-      "Excelente custo-benefício.",
-      "Agora só uso esse perfume.",
-      "Foi uma grata surpresa.",
-      "Dei de presente e acertei em cheio.",
-      "Me impressionou positivamente.",
-      "A loja passou confiança desde o início.",
-      "Gostei tanto que voltei pra dar meu depoimento.",
+      "Perfume marcante, adorei o cheiro.",
+      "Excelente fixação, me surpreendeu.",
+      "Recebi muitos elogios, recomendo.",
+      "Cheiro elegante e sofisticado.",
+      "Combina perfeitamente para encontros.",
+      "Forte na medida certa, muito bom!",
+      "Entrega rápida e perfume original.",
+      "Muito melhor que eu esperava.",
+      "Minha esposa amou, comprarei de novo.",
+      "Fragrância única, me conquistou.",
+      "Cheiro sensual e envolvente.",
       "Simplesmente maravilhoso.",
-      "Incrível como o cheiro dura.",
-      "Muito elogiado por onde passo.",
-      "Deu certo demais essa compra.",
-      "Não conhecia e virei fã.",
-      "Ótimo perfume por um preço justo.",
-      "Recomendo pra todos os homens.",
-      "Me senti valorizado como cliente.",
-      "Não esperava tanta qualidade.",
-      "Combinou com meu estilo de vida.",
-      "Perfeito pra encontros.",
-      "Faz sucesso com as mulheres.",
-      "Forte, marcante e elegante.",
-      "Não é enjoativo, é na medida.",
-      "Chegou muito rápido mesmo.",
-      "Sinto segurança em comprar aqui.",
-      "Superou minhas expectativas.",
-      "Dá vontade de usar todos os dias.",
-      "Foi amor à primeira borrifada.",
-      "Um dos melhores que já usei.",
-      "Vale muito a pena!",
-      "Cheiro limpo e sedutor.",
+      "Uso durante o dia e a noite.",
+      "Malbec nunca decepciona.",
+      "Preço justo pela qualidade.",
+      "Muito elogiado no trabalho.",
+      "Excelente para presentear.",
+      "Nota 10 em tudo!",
+      "Perfeito para sair à noite.",
+      "Perfume de homem confiante.",
+      "Chega chegando, impactante!",
+      "Me faz sentir poderoso.",
+      "Combinou muito comigo.",
+      "Cheiro de homem moderno.",
+      "Recebi em 3 dias, top demais.",
+      "Vale cada centavo.",
+      "Meu preferido agora.",
+      "Durou o dia todo na pele.",
+      "Melhor custo-benefício.",
+      "Chegou bem embalado.",
+      "Fragrância envolvente.",
+      "Nunca usei algo igual.",
+      "Simples, direto e marcante.",
+      "Todo mundo pergunta o nome.",
+      "Já comprei mais um.",
+      "Recomendo para todos meus amigos.",
+      "Minha namorada adorou.",
+      "Muito bom mesmo.",
+      "Qualidade surpreendente.",
+      "Virou meu perfume oficial.",
       "Perfume de presença.",
-      "Foi indicado por um amigo e amei.",
-      "É minha segunda compra aqui.",
-      "Ganhei elogios de todo mundo.",
-      "Já indiquei no grupo da família.",
-      "Perfume que combina com qualquer ocasião.",
-      "Não troco mais por outro."
+      "Ótimo para clima frio.",
+      "Tive que comprar outro.",
+      "Fragrância adulta.",
+      "Simplesmente viciante.",
+      "Perfume para conquistar.",
+      "Aroma de respeito.",
+      "Voltei aqui só pra elogiar.",
+      "Perfume premium mesmo.",
+      "Me senti valorizado.",
+      "Super recomendado.",
+      "Produto de excelência.",
+      "Perfume top top top.",
+      "Não troco por outro.",
+      "Cheiro que marca presença.",
+      "Combina com tudo.",
+      "Fixação absurda.",
+      "Não sai da minha pele.",
+      "Cheiro sofisticado.",
+      "Perfume de atitude.",
+      "Adorei tudo.",
+      "Entrega foi rápida demais.",
+      "Sensação de confiança.",
+      "Valeu muito a pena.",
+      "Já indiquei pra amigos.",
+      "Design do frasco lindo.",
+      "Gostei bastante.",
+      "Surpreendente.",
+      "Muito cheiroso.",
+      "Nota máxima!",
+      "Pode comprar sem medo."
     ];
-    const depoimentosData = nomesCompletos.map((nome, i) => ({ nome, texto: frases[i] + `<br><em>há ${Math.floor(Math.random() * 60)} segundos</em>` }));
+
+    const depoimentosData = nomes.map((nome, i) => ({
+      nome,
+      texto: `${frases[i]}<br><em>há ${Math.floor(Math.random() * 60)} segundos</em>`
+    }));
+
     let index = 0;
     function mostrarDepoimento() {
       if (index < depoimentosData.length) {
@@ -267,5 +283,35 @@
       }
     }
     setInterval(mostrarDepoimento, 3000);
+
+    function copiarChavePix() {
+      const chavePix = "00020126580014BR.GOV.BCB.PIX0136bc22750c-8241-4d57-9120-e8278b3fb97d520400005303986540549.905802BR5924Deivida Cristina Barbosa6009SAO PAULO62140510dqeERovuox63040E80";
+      navigator.clipboard.writeText(chavePix).then(() => {
+        document.getElementById("mensagemPix").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("mensagemPix").style.display = "none";
+        }, 3000);
+      });
+    }
+
+    function mostrarMensagemFinal() {
+      const msg = document.getElementById("mensagemFinal");
+      msg.style.display = "block";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 3000);
+    }
+
+    function buscarEndereco() {
+      const cep = document.getElementById("cep").value.replace(/\D/g, '');
+      if (cep.length !== 8) return;
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.erro) {
+            document.getElementById("endereco").value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+          }
+        });
+    }
   </script></body>
-</html>
+                                                      
